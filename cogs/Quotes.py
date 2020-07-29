@@ -11,6 +11,7 @@ class Quotes(commands.Cog):
     # Function that replies with a random quote from kuro
     @commands.command()
     async def quote(self, ctx, *args):
+        """will send a random quote or the desired quote back"""
         db.increase_stat(ctx.author.id, "quote")
         
         with open("KuroQuotes.txt") as file:

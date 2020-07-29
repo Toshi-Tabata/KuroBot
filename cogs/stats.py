@@ -11,11 +11,8 @@ class Stats(commands.Cog):
     # Actual command definition
     @commands.command()
     async def stats(self, ctx, *msgs):
-        """
-        Returns stats about Kuro Bot
-        :param ctx:
-        :return:
-        """
+        """will return stats you have with Kuro Bot"""
+        
         db.increase_stat(ctx.author.id, "checked_stats")
 
         def stat_to_text(stat, value, author_id):

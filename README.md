@@ -22,5 +22,4 @@
 
 ## TODO:
 
-- Write documentation so that the `!help` command actually works
-- Move images into img folder
+- Get stats of quotes being used

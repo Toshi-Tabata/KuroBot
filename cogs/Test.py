@@ -2,7 +2,8 @@ import discord
 from discord.ext import commands
 import database_helper as db
 
-class HelloWorld(commands.Cog):
+class Debugging(commands.Cog):
+    """Debugging and Testing Functions"""
 
     def __init__(self, client):
         self.client = client
@@ -15,15 +16,11 @@ class HelloWorld(commands.Cog):
     # Actual command definition
     @commands.command()
     async def ping(self, ctx, *msgs):
-        """
-        Sends a "Pong!" message back to the channel the command was called from
-        :param ctx:
-        :return:
-        """
+        """will send a "Pong!" message back"""
         print(msgs)
         await ctx.send("WHO DOTH PING ME <:yesdaddy:719927492890198087>")
 
 
 def setup(client):
-    client.add_cog(HelloWorld(client))
+    client.add_cog(Debugging(client))
 
