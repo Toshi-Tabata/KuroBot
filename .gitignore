@@ -1,0 +1,6 @@
+token.json
+__pycache__
+.idea
+# Debugging files
+KuroQuotes copy.txt
+log.txt
