@@ -23,6 +23,4 @@
 ## TODO:
 
 - Write documentation so that the `!help` command actually works
-- Refactor `Reply.py` to minimise indentation depth and improve readability
-- Remove unnecessary comments
 - Move images into img folder
