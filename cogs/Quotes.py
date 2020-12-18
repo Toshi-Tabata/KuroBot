@@ -2,6 +2,7 @@ import discord
 import random
 from discord.ext import commands
 import database_helper as db
+from cogs.reply_helper.quoteHelper import get_quote
 
 class Quotes(commands.Cog):
 
@@ -13,32 +14,9 @@ class Quotes(commands.Cog):
     async def quote(self, ctx, *args):
         """will send a random quote or the desired quote back"""
         db.increase_stat(ctx.author.id, "quote")
-        
-        with open("KuroQuotes.txt") as file:
-            quotes = list(file)
-            quoteToSend = []
-            for arg in args:
-                try:
-                    index = int(arg)
-                    quote = quotes[index].split("\\n")
-
-                except (ValueError, IndexError):
-                    quote = random.choice(quotes)
-                    quote = quote.split("\\n")
-                
-                for q in quote:
-                    quoteToSend.append(q)
-
-            # Send the list of quotes if we managed to get any
-            if quoteToSend:
-                for q in quoteToSend:
-                    await ctx.send(q)
-            else:
-                # We didn't get any valid args
-                quote = random.choice(quotes)
-                parsed_quote = quote.split("\\n")
-                for q in parsed_quote:
-                    await ctx.send(q)
+        parsed_quote = get_quote(args)
+        for q in parsed_quote:
+            await ctx.send(q)
 
 def setup(client):
     client.add_cog(Quotes(client))

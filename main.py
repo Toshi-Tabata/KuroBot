@@ -5,7 +5,8 @@ client = commands.Bot(command_prefix="!")
 
 for file in os.listdir("./cogs"):
     if file.endswith(".py"):
-        client.load_extension(f"cogs.{file[:-3]}")
+        file_name = f"cogs.{file[:-3]}"
+        client.load_extension(file_name)
 
 
 if __name__ == "__main__":

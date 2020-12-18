@@ -21,6 +21,7 @@ class Debugging(commands.Cog):
         await ctx.send("WHO DOTH PING ME <:yesdaddy:719927492890198087>")
 
 
+
 def setup(client):
     client.add_cog(Debugging(client))
 

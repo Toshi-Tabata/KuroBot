@@ -5,7 +5,6 @@ import random
 """
 Helper file to handle responses by Kuro Bot
 """
-
 async def kuro(ctx):
     dialogue = random.choice(["yes", "hmm", "indeed", "i see", "wait what", "ooooookaaaaaaayyyy", "mmhmm", "ok", "correct", "uuuuuuh"])
     await ctx.channel.send(dialogue)

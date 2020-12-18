@@ -23,3 +23,5 @@
 ## TODO:
 
 - Get stats of quotes being used
+- Create tests for commands
+- Create a general append function to combine functions together??
