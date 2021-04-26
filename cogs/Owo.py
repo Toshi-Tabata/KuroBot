@@ -82,7 +82,7 @@ class Owo(commands.Cog):
     # Actual command definition
     @commands.command()
     async def owo(self, ctx, *msgs):
-        """will owoify text. Can owoify quotes by combining them. e.g. !owo < !quote 52"""
+        """Owoify text. Owoify quotes by combining them !owo < !quote 52"""
         print(msgs)
 
         owotext = ""

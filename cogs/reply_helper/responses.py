@@ -17,7 +17,10 @@ async def kuwo(ctx):
     return True
 
 async def aiya(ctx):
-    await ctx.channel.send("ayayayayayaya")
+    if random.random() < 0.05:
+        await ctx.channel.send("https://tenor.com/view/weeb-anime-fat-typing-gif-14598714")
+    else:
+        await ctx.channel.send("ayayayayayaya")
     return True
 
 async def grr(ctx):

@@ -69,8 +69,8 @@ class Poll(commands.Cog):
     @commands.command()
     async def poll(self, ctx, *args):
         """
-        will create a poll with the given options
-        Usage: !poll "option_one" "option_two" "option_three" ... "option_twenty"
+        Usage: !poll question "option_two" "option_three" etc. 20 max
+                will create a poll with the given options
         """
 
         if not args:

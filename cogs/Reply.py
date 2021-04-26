@@ -16,10 +16,8 @@ KURO_ID = 109590357276098560
 
 class Reply(commands.Cog):
 
-
     def __init__(self, client):
         self.client = client
-
 
     async def handle_pings(self, ctx):
         # Check if people have pinged kuro
