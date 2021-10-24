@@ -41,9 +41,10 @@ class Poll(commands.Cog):
         """
         self.polls = {}
 
-    def create_poll_embed1(self, poll_question):
+    def create_poll_embed1(self, poll_question, username):
         # Create an embed for the poll
         embeded = discord.Embed(title=poll_question, color=0x00ff00)
+        embeded.add_field(name="Started By", value=username, inline=False)
         embeded.set_thumbnail(
             url="https://cdn.discordapp.com/attachments/728197164676808747/728242568394965045/0adc0fbc5fed89147179591d5abb428600acf8a4_hq_1.jpg")
 
@@ -103,7 +104,10 @@ class Poll(commands.Cog):
             colour = random.choice([ButtonStyle.grey, ButtonStyle.green, ButtonStyle.blue, ButtonStyle.red])
             poll_options.append(Button(label=arg, style=colour))
 
-        embeded = self.create_poll_embed1(poll_question)
+        print(ctx)
+        print(ctx.message)
+
+        embeded = self.create_poll_embed1(poll_question, ctx.message.author.name) 
 
         await message.edit(embed=embeded)
         await message.edit(content="",
